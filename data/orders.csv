@@ -1,0 +1,4 @@
+order_id,customer_id,order_date,total_amount
+1,1,2020-05-01,39.98
+2,2,2020-05-03,29.99
+3,1,2020-05-04,59.98

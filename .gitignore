@@ -170,6 +170,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+.DS_Store
+
 secret.py
 # Ignore virtual environment directories
 myenv/
