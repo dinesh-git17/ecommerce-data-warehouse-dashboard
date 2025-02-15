@@ -1,11 +1,7 @@
 import sys
 import os
-import datetime
 import subprocess
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sqlalchemy import create_engine, inspect
 import secret  # Contains DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME
 
@@ -295,8 +291,6 @@ def terminal_advanced_recommendation(console):
 # MAIN EXECUTION
 ##########################################
 if __name__ == "__main__":
-    import subprocess
-
     if os.environ.get("STREAMLIT_MODE") == "1":
         run_streamlit_app()
     else:

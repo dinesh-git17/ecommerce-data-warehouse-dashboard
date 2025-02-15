@@ -1,0 +1,4 @@
+product_id,name,category,price,stock_quantity
+1,Widget A,Widgets,19.99,100
+2,Widget B,Widgets,29.99,150
+3,Gadget C,Gadgets,39.99,200
