@@ -1,0 +1,8 @@
+sqlalchemy
+pandas
+psycopg2-binary
+rich
+streamlit
+matplotlib
+seaborn
+thefuzz
