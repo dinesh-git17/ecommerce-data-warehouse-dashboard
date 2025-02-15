@@ -6,3 +6,4 @@ streamlit
 matplotlib
 seaborn
 thefuzz
+faker
