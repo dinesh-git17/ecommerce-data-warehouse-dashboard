@@ -1,58 +1,59 @@
-E-commerce Data Warehouse & Analytics Dashboard Explorer
-===========================================================
+E-COMMERCE DATA WAREHOUSE & ANALYTICS DASHBOARD EXPLORER
+========================================================
 
 Overview:
 ---------
-This project demonstrates how to explore a PostgreSQL database using both a console (text-based)
-interface and an interactive Streamlit dashboard. The project connects to a Northwind sample 
-database (named "north_explore") via SQLAlchemy and displays schema details and sample data.
+This project demonstrates an end-to-end data warehouse and analytics solution
+using the Northwind sample database. It includes:
 
-Key Features:
-- Dual output modes: Console Output (using Rich for formatting) and an Interactive Streamlit Dashboard.
-- Custom styling in Streamlit with injected CSS.
-- Organized display of tables, columns, and sample data.
-- Option to exit the Streamlit dashboard and return to the text-based menu.
+  - An ETL pipeline (etl_northwind.py) that extracts data from CSV files, cleans
+    and transforms it, and loads it into a PostgreSQL database.
+  - SQL scripts (create_views.py) to create standard and materialized views for
+    advanced analytics.
+  - A database exploration script (explore_db.py) offering a choice between
+    console output (using Rich) and an interactive Streamlit dashboard.
 
 Setup:
 ------
-1. Create a virtual environment and activate it:
-   python3 -m venv env
-   source env/bin/activate   (or on Windows: env\Scripts\activate)
+1. Virtual Environment:
+   Create and activate a virtual environment:
+     python3 -m venv env
+     source env/bin/activate         (or on Windows: env\Scripts\activate)
 
-2. Install dependencies:
-   pip install -r requirements.txt
+2. Install Dependencies:
+   Install the required packages:
+     pip install -r requirements.txt
 
-3. Create a 'secret.py' file in the project directory with your database connection details:
-   Example secret.py:
-   
-      DB_USER = "your_username"
-      DB_PASS = "your_password"
-      DB_HOST = "localhost"
-      DB_PORT = "5432"
-      DB_NAME = "north_explore"
+3. Configure Database Credentials:
+   Create a file named secret.py with the following content (update with your actual credentials):
 
-   Make sure to add secret.py to your .gitignore.
+       DB_USER = "your_username"
+       DB_PASS = "your_password"
+       DB_HOST = "localhost"
+       DB_PORT = "5432"
+       DB_NAME = "north_explore"
+
+   Be sure to add secret.py to your .gitignore to protect sensitive data.
+
+4. Load Sample Data:
+   Run the ETL pipeline to load Northwind data from CSV files:
+     python3 etl_northwind.py
+
+5. Create Views:
+   Create the standard and materialized views by running:
+     python3 create_views.py
 
 Usage:
 ------
-- To run the text-based menu:
-    python explore_db.py
+- To view database exploration in Console mode:
+     python3 explore_db.py
+  Then follow the on-screen menu options.
 
-  The text menu will let you choose between:
-    1. Console Output (explore the database using Rich formatting)
-    2. Launch the Interactive Dashboard (Streamlit)
-    3. Exit
-
-- To launch the dashboard directly, run:
-    STREAMLIT_MODE=1 streamlit run explore_db.py
-
-The Streamlit dashboard displays the database tables in tabs with column details and sample data.
-When you click "Exit Dashboard," the dashboard terminates and returns control to the text-based menu.
+- To launch the Interactive Dashboard (Streamlit):
+     STREAMLIT_MODE=1 streamlit run explore_db.py
 
 Notes:
 ------
-- Ensure your PostgreSQL database is running and that the Northwind (north_explore) database is populated.
-- Adjust the connection settings in secret.py as needed.
-- For any issues or improvements, please refer to the project documentation or open an issue on GitHub.
+This project is designed to showcase advanced SQL skills and Python integration
+for data warehousing and analytics. 
 
-Enjoy exploring your database!
